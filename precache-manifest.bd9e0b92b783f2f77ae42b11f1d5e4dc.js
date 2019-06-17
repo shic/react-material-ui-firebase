@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "595b450fa3a1a5cb4ad5b852803d1cc2",
+    "revision": "3f942dd41ef95735a499aff4b630f0e8",
     "url": "/react-material-ui-firebase/index.html"
   },
   {
-    "revision": "2454198f9641c206f229",
+    "revision": "a92aabb3a97f2825e282",
     "url": "/react-material-ui-firebase/static/css/2.ff8d51eb.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-material-ui-firebase/static/css/main.795991f2.chunk.css"
   },
   {
-    "revision": "2454198f9641c206f229",
-    "url": "/react-material-ui-firebase/static/js/2.075d61a9.chunk.js"
+    "revision": "a92aabb3a97f2825e282",
+    "url": "/react-material-ui-firebase/static/js/2.90953654.chunk.js"
   },
   {
     "revision": "b1d09812b983de5f3e6d",
