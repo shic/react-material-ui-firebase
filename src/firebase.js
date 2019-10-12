@@ -23,3 +23,23 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 export const storage = firebase.storage();
 export const performance = firebase.performance();
+
+const persistence = localStorage.getItem('persistence');
+
+switch (persistence) {
+  case 'enable':
+    firestore.enablePersistence().then((value) => {
+      localStorage.setItem('persistence', 'enabled');
+    }).catch((reason) => {
+
+    });
+    break;
+
+  case 'clear':
+    firestore.clearPersistence().then((value) => {
+      localStorage.removeItem('persistence');
+    }).catch((reason) => {
+
+    });
+    break;
+}

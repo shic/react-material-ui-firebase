@@ -16,10 +16,15 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import Hidden from '@material-ui/core/Hidden';
 import TextField from '@material-ui/core/TextField';
 import Tooltip from '@material-ui/core/Tooltip';
-import IconButton from '@material-ui/core/IconButton';
+import IconButton from '@material-ui/core/IconButton'
+import Switch from '@material-ui/core/Switch';
+import Checkbox from '@material-ui/core/Checkbox';
+import Button from '@material-ui/core/Button';
 
 import LockIcon from '@material-ui/icons/Lock';
 import EditIcon from '@material-ui/icons/Edit';
+import OfflineBoltIcon from '@material-ui/icons/OfflineBolt';
+import RefreshIcon from '@material-ui/icons/Refresh';
 
 import constraints from '../../constraints';
 import authentication from '../../services/authentication';
@@ -31,6 +36,8 @@ const initialState = {
   passwordConfirmation: '',
 
   performingAction: false,
+  needsToRefresh: false,
+  persistence: false,
 
   errors: null
 };
@@ -195,6 +202,40 @@ class SecurityTab extends Component {
     });
   };
 
+  refresh = () => {
+    window.location.reload();
+  };
+
+  trustDevice = () => {
+    this.setState({
+      performingAction: true
+    }, () => {
+      localStorage.setItem('persistence', 'enable');
+
+      setTimeout(() => {
+        this.setState({
+          performingAction: false,
+          needsToRefresh: true
+        });
+      }, 1000);
+    });
+  };
+
+  removeDevice = () => {
+    this.setState({
+      performingAction: true
+    }, () => {
+      localStorage.setItem('persistence', 'clear');
+
+      setTimeout(() => {
+        this.setState({
+          performingAction: false,
+          needsToRefresh: true
+        });
+      }, 1000);
+    });
+  };
+
   render() {
     // Properties
     const { userData } = this.props;
@@ -206,6 +247,8 @@ class SecurityTab extends Component {
       passwordConfirmation,
 
       performingAction,
+      needsToRefresh,
+      persistence,
 
       errors
     } = this.state;
@@ -289,6 +332,61 @@ class SecurityTab extends Component {
                 </ListItemSecondaryAction>
               </>
             }
+          </ListItem>
+
+          <ListItem>
+            <Hidden xsDown>
+              <ListItemIcon>
+                <OfflineBoltIcon />
+              </ListItemIcon>
+            </Hidden>
+
+            <Hidden xsDown>
+              <ListItemText
+                primary="Offline access"
+                secondary={
+                  <>
+                    {needsToRefresh && 'Refresh to apply changes'}
+
+                    {!needsToRefresh &&
+                    <>
+                      {persistence && 'Remove this device if it can’t be trusted anymore'}
+                      {!persistence && 'Trust this device for offline access'}
+                    </>
+                    }
+                  </>
+                }
+              />
+            </Hidden>
+
+            <Hidden smUp>
+              <ListItemText
+                primary="Offline access"
+                secondary={needsToRefresh ? 'Refresh to apply changes' : null}
+              />
+            </Hidden>
+
+            <ListItemSecondaryAction>
+              {needsToRefresh &&
+                <Tooltip title="Refresh">
+                  <IconButton onClick={this.refresh}>
+                    <RefreshIcon />
+                  </IconButton>
+                </Tooltip>
+              }
+
+              {!needsToRefresh &&
+                <>
+                  {persistence &&
+                    <Button color="secondary" disabled={performingAction} variant="contained" onClick={this.removeDevice}>Remove</Button>
+                  }
+
+                  {!persistence &&
+                    <Button color="primary" disabled={performingAction} variant="contained" onClick={this.trustDevice}>Trust</Button>
+                  }
+                </>
+              }
+            </ListItemSecondaryAction>
           </ListItem>
         </List>
       </DialogContent>
