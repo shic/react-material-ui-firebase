@@ -31,6 +31,13 @@ https://phoqe.me/react-material-ui-firebase
 
 The project is up and running after just 4 commands.
 
+### Use your own repository
+
+If you are going to use GitHub for your project it is recommended to use this repository as a template.
+Click “Use this template” next to “Clone or download” on the repository page on GitHub.
+This will prompt you to create a new repository using this project as a base.
+You still need to clone your repository to get the project files, replace `https://github.com/Phoqe/react-material-ui-firebase.git` with your own repository’s URL in the next step.
+
 ### Clone the repository
 
 The command `git clone` is a [Git](https://www.git-scm.com) command-line utility which is used to target an existing repository and create a clone, or copy of the target repository. The `<directory>` option is the name of a new directory to clone into, you can replace it with your project’s name. The “humanish” part of the source repository is used if no directory is explicitly given (`repo` for `/path/to/repo.git` and `foo` for `host.xz:foo/.git`).
@@ -78,32 +85,6 @@ Changing your project’s name can be tedious sometimes as it often involves cha
 - package.json
   - `name`
   - `homepage`
-
-### Use your own Git repository
-
-The command `git remote` is another Git command-line utility which is used to manage the set of repositories (“remotes”) whose branches you track. The options `rm origin` is used to remove the remote named `origin`. All remote-tracking branches and configuration settings for the remote are removed.
-
-```
-git remote rm origin
-```
-
-The options `add origin` adds a remote named `origin` for the repository at `<url>`.
-
-```
-git remote add origin <url>
-```
-
-The options `add upstream` adds a remote named `upstream` for the repository at `https://github.com/Phoqe/react-material-ui-firebase.git`.
-
-```
-git remote add upstream https://github.com/Phoqe/react-material-ui-firebase.git
-```
-
-The command `git push` is yet another Git command-line utility which is used to update remote refs using local refs, while sending objects necessary to complete the given refs.
-
-```
-git push -u origin master
-```
 
 ### Deploy Firebase rules
 
