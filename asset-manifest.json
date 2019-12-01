@@ -6,10 +6,10 @@
     "runtime-main.js": "/react-material-ui-firebase/static/js/runtime-main.283cf401.js",
     "runtime-main.js.map": "/react-material-ui-firebase/static/js/runtime-main.283cf401.js.map",
     "static/css/2.f303a253.chunk.css": "/react-material-ui-firebase/static/css/2.f303a253.chunk.css",
-    "static/js/2.c29f1777.chunk.js": "/react-material-ui-firebase/static/js/2.c29f1777.chunk.js",
-    "static/js/2.c29f1777.chunk.js.map": "/react-material-ui-firebase/static/js/2.c29f1777.chunk.js.map",
+    "static/js/2.a1b1bab2.chunk.js": "/react-material-ui-firebase/static/js/2.a1b1bab2.chunk.js",
+    "static/js/2.a1b1bab2.chunk.js.map": "/react-material-ui-firebase/static/js/2.a1b1bab2.chunk.js.map",
     "index.html": "/react-material-ui-firebase/index.html",
-    "precache-manifest.b21e6b7b64406e0696fa3750564746a8.js": "/react-material-ui-firebase/precache-manifest.b21e6b7b64406e0696fa3750564746a8.js",
+    "precache-manifest.38222a7bea150c75f26758311d19acdf.js": "/react-material-ui-firebase/precache-manifest.38222a7bea150c75f26758311d19acdf.js",
     "service-worker.js": "/react-material-ui-firebase/service-worker.js",
     "static/css/2.f303a253.chunk.css.map": "/react-material-ui-firebase/static/css/2.f303a253.chunk.css.map",
     "static/css/main.795991f2.chunk.css.map": "/react-material-ui-firebase/static/css/main.795991f2.chunk.css.map",
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.283cf401.js",
     "static/css/2.f303a253.chunk.css",
-    "static/js/2.c29f1777.chunk.js",
+    "static/js/2.a1b1bab2.chunk.js",
     "static/css/main.795991f2.chunk.css",
     "static/js/main.dcbe74da.chunk.js"
   ]
