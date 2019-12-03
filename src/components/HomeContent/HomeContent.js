@@ -5,12 +5,18 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 import Fab from '@material-ui/core/Fab';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Card from '@material-ui/core/Paper';
+import CardContent from '@material-ui/core/CardContent';
+import Box from '@material-ui/core/Box';
 
 import HomeIcon from '@material-ui/icons/Home';
 
 import GitHubCircleIcon from 'mdi-material-ui/GithubCircle';
 
 import EmptyState from '../EmptyState';
+import GuideStepper from '../GuideStepper';
 
 const styles = (theme) => ({
   emptyStateIcon: {
@@ -23,6 +29,10 @@ const styles = (theme) => ({
 
   buttonIcon: {
     marginRight: theme.spacing(1)
+  },
+
+  cardContent: {
+    paddingBottom: theme.spacing(0)
   }
 });
 
@@ -42,6 +52,22 @@ class HomeContent extends Component {
         />
       );
     }
+
+    return (
+      <Grid container justify="center">
+        <Grid item xs={7}>
+          <Card>
+            <CardContent classes={{ root: classes.cardContent }}>
+              <Box color="text.secondary">
+                Portions of this page are modifications based on work created and shared by Google and used according to terms described in the Creative Commons 4.0 Attribution License.
+              </Box>
+            </CardContent>
+
+            <GuideStepper />
+          </Card>
+        </Grid>
+      </Grid>
+    );
 
     return (
       <EmptyState
