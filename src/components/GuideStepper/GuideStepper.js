@@ -261,7 +261,7 @@ class GuideStepper extends Component {
         )
       },
       {
-        button: 'Deploying Cloud Firestore Security Rules',
+        button: 'Deploy Cloud Firestore Security Rules',
         content: (
           <StepContent>
             <ol>
@@ -306,7 +306,7 @@ class GuideStepper extends Component {
         )
       },
       {
-        button: 'Deploying Storage Security Rules',
+        button: 'Deploy Storage Security Rules',
         content: (
           <StepContent>
             <ol>
